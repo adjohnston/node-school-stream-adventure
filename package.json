@@ -8,6 +8,7 @@
     "url": "git+https://github.com/adjohnston/node-school-stream-adventure.git"
   },
   "dependencies": {
+    "split": "^1.0.0",
     "through2": "^2.0.0"
   }
 }
