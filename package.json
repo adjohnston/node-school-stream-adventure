@@ -1,0 +1,13 @@
+{
+  "name": "node-school-stream-adventure",
+  "version": "0.0.4",
+  "description": "",
+  "main": "program.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adjohnston/node-school-stream-adventure.git"
+  },
+  "dependencies": {
+    "through2": "^2.0.0"
+  }
+}
