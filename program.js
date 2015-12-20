@@ -1,16 +1,18 @@
-var through = require('through2'),
-    stream = through(write, end);
+var split = require('split'),
+    through = require('through2');
 
-function write (buffer, encoding, next) {
-  this.push(buffer.toString().toUpperCase());
-  next();
-}
+var evenLine = false,
+    transform = through(function (buffer, encoding, next) {
+      var line = buffer.toString() + '\n';
 
-function end (done) {
-  done();
-}
+      (evenLine) ? this.push(line.toUpperCase()) : this.push(line.toLowerCase());
+      (evenLine) ? evenLine = false : evenLine = true;
+        
+      next();
+    });
 
 process
   .stdin
-  .pipe(stream)
+  .pipe(split())
+  .pipe(transform)
   .pipe(process.stdout);
