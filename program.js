@@ -1,7 +1,3 @@
-var fs = require('fs');
-
-var file = process.argv[2],
-    stream = fs.createReadStream(file);
-
-stream
+process
+  .stdin
   .pipe(process.stdout);
